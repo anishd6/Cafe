@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 
 public class OrderNowController extends AnchorPane {
 
@@ -39,7 +40,14 @@ public class OrderNowController extends AnchorPane {
 	@FXML
 	Spinner<Integer> cheesecakeSpinner;
 
+	@FXML
+	Text orderText;
+
+	@FXML
+	Text totalText;
+
 	int[] order;
+	double orderTotal;
 	ArrayList<Spinner<Integer>> spinnersList;
 
 	public OrderNowController() {
@@ -87,6 +95,7 @@ public class OrderNowController extends AnchorPane {
 	}
 
 	private void initOrder() {
+		orderTotal = 0;
 		order = new int[spinnersList.size()];
 
 		for (int i = 0; i < spinnersList.size(); i++) {
@@ -96,8 +105,57 @@ public class OrderNowController extends AnchorPane {
 	}
 
 	private void updateOrder() {
-		System.out.println(Arrays.toString(order));
-		
+		orderTotal = 0;
+		String orderTextValue = "";
+
+		for (int i = 0; i < order.length; i++) {
+
+			if (order[i] != 0) {
+				int itemCount = order[i];
+				switch (i) {
+				case 0:
+					orderTotal += itemCount * 3.25;
+					orderTextValue += itemCount + "x Americano \n";
+					break;
+				case 1:
+					orderTotal += itemCount * 3.75;
+					orderTextValue += itemCount + "x Capuccino \n";
+					break;
+				case 2:
+					orderTotal += itemCount * 3.50;
+					orderTextValue += itemCount + "x Espresso \n";
+					break;
+				case 3:
+					orderTotal += itemCount * 3.75;
+					orderTextValue += itemCount + "x Hot Chocolate \n";
+					break;
+				case 4:
+					orderTotal += itemCount * 3.75;
+					orderTextValue += itemCount + "x White Chocolate \n";
+					break;
+				case 5:
+					orderTotal += itemCount * 4.00;
+					orderTextValue += itemCount + "x Matcha Latte \n";
+					break;
+				case 6:
+					orderTotal += itemCount * 1.50;
+					orderTextValue += itemCount + "x Doughnut \n";
+					break;
+				case 7:
+					orderTotal += itemCount * 2.50;
+					orderTextValue += itemCount + "x Croissant \n";
+					break;
+				case 8:
+					orderTotal += itemCount * 4.75;
+					orderTextValue += itemCount + "x Cheesecake \n";
+					break;
+				}
+			}
+
+		}
+
+		orderText.setText(orderTextValue);
+		totalText.setText("Total: $" + orderTotal);
 	}
 
 }

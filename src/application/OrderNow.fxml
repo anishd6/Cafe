@@ -7,53 +7,88 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="650.0" type="AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity"
+	minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0"
+	prefWidth="650.0" type="AnchorPane"
+	xmlns="http://javafx.com/javafx"
+	xmlns:fx="http://javafx.com/fxml">
 	<children>
-		<Text layoutX="183.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Now" textAlignment="CENTER" wrappingWidth="284.21630859375">
+		<Text layoutX="183.0" layoutY="60.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Order Now" textAlignment="CENTER"
+			wrappingWidth="284.21630859375">
 			<font>
 				<Font size="48.0" />
 			</font>
 		</Text>
-		<Text layoutX="68.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Coffee">
+		<Text layoutX="68.0" layoutY="107.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Coffee">
 			<font>
 				<Font name="System Bold" size="24.0" />
 			</font>
 		</Text>
-		<Spinner fx:id="americanoSpinner" editable="true" layoutX="68.0" layoutY="123.0" prefHeight="27.0" prefWidth="68.0" />
-		<Text layoutX="144.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Americano - $3.25" />
-		<Spinner fx:id="cappuccinoSpinner" editable="true" layoutX="69.0" layoutY="157.0" prefHeight="27.0" prefWidth="67.0" />
-		<Text layoutX="144.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cappuccino - $3.75" />
-		<Spinner fx:id="espressoSpinner" editable="true" layoutX="69.0" layoutY="194.0" prefHeight="27.0" prefWidth="67.0" />
-		<Text layoutX="144.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Espresso - $3.50" />
-		<Text layoutX="70.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hot Drinks">
+		<Spinner fx:id="americanoSpinner" editable="true"
+			layoutX="68.0" layoutY="123.0" prefHeight="27.0" prefWidth="68.0" />
+		<Text layoutX="144.0" layoutY="141.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Americano - $3.25" />
+		<Spinner fx:id="cappuccinoSpinner" editable="true"
+			layoutX="69.0" layoutY="157.0" prefHeight="27.0" prefWidth="67.0" />
+		<Text layoutX="144.0" layoutY="175.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Cappuccino - $3.75" />
+		<Spinner fx:id="espressoSpinner" editable="true"
+			layoutX="69.0" layoutY="194.0" prefHeight="27.0" prefWidth="67.0" />
+		<Text layoutX="144.0" layoutY="212.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Espresso - $3.50" />
+		<Text layoutX="70.0" layoutY="267.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Hot Drinks">
 			<font>
 				<Font name="System Bold" size="24.0" />
 			</font>
 		</Text>
-		<Spinner fx:id="hotChocolateSpinner" editable="true" layoutX="69.0" layoutY="281.0" prefHeight="27.0" prefWidth="68.0" />
-		<Text layoutX="145.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hot Chocolate - $3.75" />
-		<Spinner fx:id="whiteChocolateSpinner" editable="true" layoutX="69.0" layoutY="316.0" prefHeight="27.0" prefWidth="68.0" />
-		<Text layoutX="145.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" text="White Chocolate  - $3.75" />
-		<Spinner fx:id="matchaLatteSpinner" editable="true" layoutX="69.0" layoutY="357.0" prefHeight="27.0" prefWidth="68.0" />
-		<Text layoutX="145.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matcha Latte - $4.00" />
-		<Text layoutX="74.0" layoutY="421.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Desserts">
+		<Spinner fx:id="hotChocolateSpinner" editable="true"
+			layoutX="69.0" layoutY="281.0" prefHeight="27.0" prefWidth="68.0" />
+		<Text layoutX="145.0" layoutY="299.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Hot Chocolate - $3.75" />
+		<Spinner fx:id="whiteChocolateSpinner" editable="true"
+			layoutX="69.0" layoutY="316.0" prefHeight="27.0" prefWidth="68.0" />
+		<Text layoutX="145.0" layoutY="334.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="White Chocolate  - $3.75" />
+		<Spinner fx:id="matchaLatteSpinner" editable="true"
+			layoutX="69.0" layoutY="357.0" prefHeight="27.0" prefWidth="68.0" />
+		<Text layoutX="145.0" layoutY="375.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Matcha Latte - $4.00" />
+		<Text layoutX="74.0" layoutY="421.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Desserts">
 			<font>
 				<Font name="System Bold" size="24.0" />
 			</font>
 		</Text>
-		<Spinner fx:id="doughnutSpinner" editable="true" layoutX="68.0" layoutY="436.0" prefHeight="27.0" prefWidth="68.0" />
-		<Text layoutX="144.0" layoutY="454.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Doughnut - $1.50" />
-		<Spinner fx:id="croissantSpinner" editable="true" layoutX="69.0" layoutY="470.0" prefHeight="27.0" prefWidth="68.0" />
-		<Text layoutX="145.0" layoutY="488.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Croissant - $2.50" />
-		<Spinner fx:id="cheesecakeSpinner" editable="true" layoutX="69.0" layoutY="507.0" prefHeight="27.0" prefWidth="68.0" />
-		<TextField fx:id="couponTextField" layoutX="427.0" layoutY="428.0" prefHeight="27.0" prefWidth="95.0" promptText="Coupon Code" />
-		<Text layoutX="142.0" layoutY="525.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cheesecake - $4.75" />
-		<Button fx:id="placeOrderButton" layoutX="522.0" layoutY="470.0" mnemonicParsing="false" text="Place Order" />
-		<Text fx:id="totalText" layoutX="536.0" layoutY="446.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total: $0.00" />
-      <Text layoutX="467.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Order">
-         <font>
-            <Font name="System Bold" size="24.0" />
-         </font>
-      </Text>
+		<Spinner fx:id="doughnutSpinner" editable="true"
+			layoutX="68.0" layoutY="436.0" prefHeight="27.0" prefWidth="68.0" />
+		<Text layoutX="144.0" layoutY="454.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Doughnut - $1.50" />
+		<Spinner fx:id="croissantSpinner" editable="true"
+			layoutX="69.0" layoutY="470.0" prefHeight="27.0" prefWidth="68.0" />
+		<Text layoutX="145.0" layoutY="488.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Croissant - $2.50" />
+		<Spinner fx:id="cheesecakeSpinner" editable="true"
+			layoutX="69.0" layoutY="507.0" prefHeight="27.0" prefWidth="68.0" />
+		<TextField fx:id="couponTextField" layoutX="433.0"
+			layoutY="453.0" prefHeight="27.0" prefWidth="95.0"
+			promptText="Coupon Code" />
+		<Text layoutX="142.0" layoutY="525.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Cheesecake - $4.75" />
+		<Button fx:id="placeOrderButton" layoutX="528.0"
+			layoutY="487.0" mnemonicParsing="false" text="Place Order" />
+		<Text fx:id="totalText" layoutX="542.0" layoutY="471.0"
+			strokeType="OUTSIDE" strokeWidth="0.0" text="Total: $0.00" />
+		<Text layoutX="467.0" layoutY="266.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Your Order">
+			<font>
+				<Font name="System Bold" size="24.0" />
+			</font>
+		</Text>
+		<Text fx:id="orderText" layoutX="453.0" layoutY="299.0"
+			strokeType="OUTSIDE" strokeWidth="0.0"
+			wrappingWidth="137.56005859375" />
 	</children>
 </fx:root>
