@@ -1,20 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity"
-	minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-	prefWidth="600.0" type="AnchorPane" xmlns="http://javafx.com/javafx"
+	minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0"
+	prefWidth="650.0" type="AnchorPane"
+	xmlns="http://javafx.com/javafx"
 	xmlns:fx="http://javafx.com/fxml">
 	<children>
-		<Text layoutX="158.0" layoutY="84.0" strokeType="OUTSIDE"
+		<Text layoutX="183.0" layoutY="60.0" strokeType="OUTSIDE"
 			strokeWidth="0.0" text="Nutrition" textAlignment="CENTER"
 			wrappingWidth="284.21630859375">
 			<font>
 				<Font size="48.0" />
 			</font>
 		</Text>
+		<Text layoutX="68.0" layoutY="107.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Coffee">
+			<font>
+				<Font name="System Bold" size="24.0" />
+			</font>
+		</Text>
+		<Spinner fx:id="americanoSpinner" editable="true"
+			layoutX="68.0" layoutY="123.0" prefHeight="27.0" prefWidth="68.0" />
+		<Text layoutX="144.0" layoutY="141.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Americano - $3.25" />
+		<Spinner fx:id="cappuccinoSpinner" editable="true"
+			layoutX="69.0" layoutY="157.0" prefHeight="27.0" prefWidth="67.0" />
+		<Text layoutX="144.0" layoutY="175.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Cappuccino - $3.75" />
+		<Spinner fx:id="espressoSpinner" editable="true"
+			layoutX="69.0" layoutY="194.0" prefHeight="27.0" prefWidth="67.0" />
+		<Text layoutX="144.0" layoutY="212.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Espresso - $3.50" />
+		<Text layoutX="70.0" layoutY="267.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Hot Drinks">
+			<font>
+				<Font name="System Bold" size="24.0" />
+			</font>
+		</Text>
+		<Spinner fx:id="hotChocolateSpinner" editable="true"
+			layoutX="69.0" layoutY="281.0" prefHeight="27.0" prefWidth="68.0" />
+		<Text layoutX="145.0" layoutY="299.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Hot Chocolate - $3.75" />
+		<Spinner fx:id="whiteChocolateSpinner" editable="true"
+			layoutX="69.0" layoutY="316.0" prefHeight="27.0" prefWidth="68.0" />
+		<Text layoutX="145.0" layoutY="334.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="White Chocolate  - $3.75" />
+		<Spinner fx:id="matchaLatteSpinner" editable="true"
+			layoutX="69.0" layoutY="357.0" prefHeight="27.0" prefWidth="68.0" />
+		<Text layoutX="145.0" layoutY="375.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Matcha Latte - $4.00" />
+		<Text layoutX="74.0" layoutY="421.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Desserts">
+			<font>
+				<Font name="System Bold" size="24.0" />
+			</font>
+		</Text>
+		<Spinner fx:id="doughnutSpinner" editable="true"
+			layoutX="68.0" layoutY="436.0" prefHeight="27.0" prefWidth="68.0" />
+		<Text layoutX="144.0" layoutY="454.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Doughnut - $1.50" />
+		<Spinner fx:id="croissantSpinner" editable="true"
+			layoutX="69.0" layoutY="470.0" prefHeight="27.0" prefWidth="68.0" />
+		<Text layoutX="145.0" layoutY="488.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Croissant - $2.50" />
+		<Spinner fx:id="cheesecakeSpinner" editable="true"
+			layoutX="69.0" layoutY="507.0" prefHeight="27.0" prefWidth="68.0" />
+		<Text layoutX="142.0" layoutY="525.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Cheesecake - $4.75" />
+		<Text layoutX="441.0" layoutY="163.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Macros">
+			<font>
+				<Font name="System Bold" size="24.0" />
+			</font>
+		</Text>
+		<Text fx:id="orderCaloriesText" layoutX="439.0" layoutY="196.0"
+			strokeType="OUTSIDE" strokeWidth="0.0" text="Calories: 0" />
+		<Text fx:id="orderCarbohydratesText" layoutX="439.0"
+			layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0"
+			text="Carbohydrates (G): 0" />
+		<Text fx:id="orderProteinText" layoutX="441.0" layoutY="246.0"
+			strokeType="OUTSIDE" strokeWidth="0.0" text="Protein (G):  0" />
+		<Text fx:id="orderFatText" layoutX="441.0" layoutY="272.0"
+			strokeType="OUTSIDE" strokeWidth="0.0" text="Fat (G):  0" />
+		<Text layoutX="439.0" layoutY="337.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Daily Intake">
+			<font>
+				<Font name="System Bold" size="24.0" />
+			</font>
+		</Text>
+		<Text fx:id="dailyCaloriesText" layoutX="437.0" layoutY="370.0"
+			strokeType="OUTSIDE" strokeWidth="0.0" text="Calories: 0" />
+		<Text fx:id="dailyCarbohydratesText" layoutX="437.0"
+			layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0"
+			text="Carbohydrates (G): 0" />
+		<Text fx:id="dailyProteinText" layoutX="439.0" layoutY="420.0"
+			strokeType="OUTSIDE" strokeWidth="0.0" text="Protein (G):  0" />
+		<Text fx:id="dailyFatText" layoutX="439.0" layoutY="446.0"
+			strokeType="OUTSIDE" strokeWidth="0.0" text="Fat (G):  0" />
 	</children>
 </fx:root>
