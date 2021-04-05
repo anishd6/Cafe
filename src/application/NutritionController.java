@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
 public class NutritionController extends AnchorPane {
@@ -40,25 +41,40 @@ public class NutritionController extends AnchorPane {
 	Spinner<Integer> cheesecakeSpinner;
 
 	@FXML
-	Text orderText;
+	Text orderCaloriesText;
 
 	@FXML
-	Text caloriesText;
+	Text orderCarbohydratesText;
 
 	@FXML
-	Text carbohydratesText;
+	Text orderProteinText;
 
 	@FXML
-	Text proteinText;
+	Text orderFatText;
 
 	@FXML
-	Text fatText;
+	Text dailyCaloriesText;
+
+	@FXML
+	Text dailyCarbohydratesText;
+
+	@FXML
+	Text dailyProteinText;
+
+	@FXML
+	Text dailyFatText;
 
 	int[] order;
-	int calories;
-	int protein;
-	int carbohydrates;
-	int fat;
+
+	int dailyCalories;
+	int dailyProtein;
+	int dailyCarbohydrates;
+	int dailyFat;
+
+	int orderCalories;
+	int orderProtein;
+	int orderCarbohydrates;
+	int orderFat;
 
 	ArrayList<Spinner<Integer>> spinnersList;
 
@@ -107,20 +123,44 @@ public class NutritionController extends AnchorPane {
 	}
 
 	private void initNutrition() {
-		calories = 0;
+		orderCalories = 0;
+		orderProtein = 0;
+		orderCarbohydrates = 0;
+		orderFat = 0;
+
+		dailyCalories = 1800;
+		dailyProtein = 150;
+		dailyCarbohydrates = 210;
+		dailyFat = 40;
+
 		order = new int[spinnersList.size()];
 
 		for (int i = 0; i < spinnersList.size(); i++) {
 			order[i] = 0;
 		}
 
+		orderCaloriesText.setText("Calories: " + orderCalories);
+		orderFatText.setText("Fat (G): " + orderFat);
+		orderProteinText.setText("Protien (G): " + orderProtein);
+		orderCarbohydratesText.setText("Carbohydrates (G): " + orderCarbohydrates);
+
+		dailyCaloriesText.setText("Calories: " + (dailyCalories - orderCalories));
+		dailyFatText.setText("Fat (G): " + (dailyFat - orderFat));
+		dailyProteinText.setText("Protien (G): " + (dailyProtein - orderProtein));
+		dailyCarbohydratesText.setText("Carbohydrates (G): " + (dailyCarbohydrates - orderCarbohydrates));
+
 	}
 
 	private void updateNutrition() {
-		calories = 0;
-		fat = 0;
-		protein = 0;
-		carbohydrates = 0;
+		orderCalories = 0;
+		orderProtein = 0;
+		orderCarbohydrates = 0;
+		orderFat = 0;
+
+		dailyCalories = 1800;
+		dailyProtein = 150;
+		dailyCarbohydrates = 210;
+		dailyFat = 40;
 
 		for (int i = 0; i < order.length; i++) {
 
@@ -128,68 +168,84 @@ public class NutritionController extends AnchorPane {
 				int itemCount = order[i];
 				switch (i) {
 				case 0:
-					calories += itemCount * 15;
-					fat += itemCount * 0;
-					protein += itemCount * 1;
-					carbohydrates += 2;
+					orderCalories += itemCount * 15;
+					orderFat += itemCount * 0;
+					orderProtein += itemCount * 1;
+					orderCarbohydrates += 2;
 					break;
 				case 1:
-					calories += itemCount * 140;
-					fat += itemCount * 5;
-					protein += itemCount * 9;
-					carbohydrates += 14;
+					orderCalories += itemCount * 140;
+					orderFat += itemCount * 5;
+					orderProtein += itemCount * 9;
+					orderCarbohydrates += 14;
 					break;
 				case 2:
-					calories += itemCount * 170;
-					fat += itemCount * 9;
-					protein += itemCount * 9;
-					carbohydrates += 14;
+					orderCalories += itemCount * 170;
+					orderFat += itemCount * 9;
+					orderProtein += itemCount * 9;
+					orderCarbohydrates += 14;
 					break;
 				case 3:
-					calories += itemCount * 440;
-					fat += itemCount * 19;
-					protein += itemCount * 15;
-					carbohydrates += 55;
+					orderCalories += itemCount * 440;
+					orderFat += itemCount * 19;
+					orderProtein += itemCount * 15;
+					orderCarbohydrates += 55;
 					break;
 				case 4:
-					calories += itemCount * 370;
-					fat += itemCount * 16;
-					protein += itemCount * 14;
-					carbohydrates += 43;
+					orderCalories += itemCount * 370;
+					orderFat += itemCount * 16;
+					orderProtein += itemCount * 14;
+					orderCarbohydrates += 43;
 					break;
 				case 5:
-					calories += itemCount * 240;
-					fat += itemCount * 7;
-					protein += itemCount * 12;
-					carbohydrates += 34;
+					orderCalories += itemCount * 240;
+					orderFat += itemCount * 7;
+					orderProtein += itemCount * 12;
+					orderCarbohydrates += 34;
 					break;
 				case 6:
-					calories += itemCount * 480;
-					fat += itemCount * 27;
-					protein += itemCount * 5;
-					carbohydrates += 56;
+					orderCalories += itemCount * 480;
+					orderFat += itemCount * 27;
+					orderProtein += itemCount * 5;
+					orderCarbohydrates += 56;
 					break;
 				case 7:
-					calories += itemCount * 260;
-					fat += itemCount * 15;
-					protein += itemCount * 5;
-					carbohydrates += 27;
+					orderCalories += itemCount * 260;
+					orderFat += itemCount * 15;
+					orderProtein += itemCount * 5;
+					orderCarbohydrates += 27;
 					break;
 				case 8:
-					calories += itemCount * 321;
-					fat += itemCount * 23;
-					protein += itemCount * 6;
-					carbohydrates += 26;
+					orderCalories += itemCount * 321;
+					orderFat += itemCount * 23;
+					orderProtein += itemCount * 6;
+					orderCarbohydrates += 26;
 					break;
 				}
 			}
 
 		}
 
-		caloriesText.setText("Calories: " + calories);
-		fatText.setText("Fat (G): " + fat);
-		proteinText.setText("Protien (G): " + protein);
-		carbohydratesText.setText("Carbohydrates (G): " + carbohydrates);
+		orderCaloriesText.setText("Calories: " + orderCalories);
+		orderFatText.setText("Fat (G): " + orderFat);
+		orderProteinText.setText("Protien (G): " + orderProtein);
+		orderCarbohydratesText.setText("Carbohydrates (G): " + orderCarbohydrates);
+
+		dailyCalories -= orderCalories;
+		dailyFat -= orderFat;
+		dailyProtein -= orderProtein;
+		dailyCarbohydrates -= orderCarbohydrates;
+
+		dailyCaloriesText.setText("Calories: " + dailyCalories);
+		dailyFatText.setText("Fat (G): " + dailyFat);
+		dailyProteinText.setText("Protien (G): " + dailyProtein);
+		dailyCarbohydratesText.setText("Carbohydrates (G): " + dailyCarbohydrates);
+
+		dailyCaloriesText.setFill(dailyCalories < 0 ? Color.RED : Color.BLACK);
+		dailyFatText.setFill(dailyFat < 0 ? Color.RED : Color.BLACK);
+		dailyProteinText.setFill(dailyProtein < 0 ? Color.RED : Color.BLACK);
+		dailyCarbohydratesText.setFill(dailyCarbohydrates < 0 ? Color.RED : Color.BLACK);
+
 	}
 
 }

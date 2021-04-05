@@ -72,19 +72,35 @@
 			layoutX="69.0" layoutY="507.0" prefHeight="27.0" prefWidth="68.0" />
 		<Text layoutX="142.0" layoutY="525.0" strokeType="OUTSIDE"
 			strokeWidth="0.0" text="Cheesecake - $4.75" />
-		<Text layoutX="441.0" layoutY="193.0" strokeType="OUTSIDE"
+		<Text layoutX="441.0" layoutY="163.0" strokeType="OUTSIDE"
 			strokeWidth="0.0" text="Macros">
 			<font>
 				<Font name="System Bold" size="24.0" />
 			</font>
 		</Text>
-		<Text fx:id="caloriesText" layoutX="439.0" layoutY="226.0"
+		<Text fx:id="orderCaloriesText" layoutX="439.0" layoutY="196.0"
 			strokeType="OUTSIDE" strokeWidth="0.0" text="Calories: 0" />
-		<Text fx:id="carbohydratesText" layoutX="439.0" layoutY="253.0"
-			strokeType="OUTSIDE" strokeWidth="0.0" text="Carbohydrates (G): 0" />
-		<Text fx:id="proteinText" layoutX="441.0" layoutY="276.0"
+		<Text fx:id="orderCarbohydratesText" layoutX="439.0"
+			layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0"
+			text="Carbohydrates (G): 0" />
+		<Text fx:id="orderProteinText" layoutX="441.0" layoutY="246.0"
 			strokeType="OUTSIDE" strokeWidth="0.0" text="Protein (G):  0" />
-		<Text fx:id="fatText" layoutX="441.0" layoutY="302.0"
+		<Text fx:id="orderFatText" layoutX="441.0" layoutY="272.0"
+			strokeType="OUTSIDE" strokeWidth="0.0" text="Fat (G):  0" />
+		<Text layoutX="439.0" layoutY="337.0" strokeType="OUTSIDE"
+			strokeWidth="0.0" text="Daily Intake">
+			<font>
+				<Font name="System Bold" size="24.0" />
+			</font>
+		</Text>
+		<Text fx:id="dailyCaloriesText" layoutX="437.0" layoutY="370.0"
+			strokeType="OUTSIDE" strokeWidth="0.0" text="Calories: 0" />
+		<Text fx:id="dailyCarbohydratesText" layoutX="437.0"
+			layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0"
+			text="Carbohydrates (G): 0" />
+		<Text fx:id="dailyProteinText" layoutX="439.0" layoutY="420.0"
+			strokeType="OUTSIDE" strokeWidth="0.0" text="Protein (G):  0" />
+		<Text fx:id="dailyFatText" layoutX="439.0" layoutY="446.0"
 			strokeType="OUTSIDE" strokeWidth="0.0" text="Fat (G):  0" />
 	</children>
 </fx:root>
