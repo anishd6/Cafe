@@ -2,10 +2,15 @@ package application;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.layout.AnchorPane;
@@ -46,8 +51,12 @@ public class OrderNowController extends AnchorPane {
 	@FXML
 	Text totalText;
 
+	@FXML
+	Button placeOrderButton;
+
 	int[] order;
 	double orderTotal;
+	String orderTextValue;
 	ArrayList<Spinner<Integer>> spinnersList;
 
 	public OrderNowController() {
@@ -67,6 +76,8 @@ public class OrderNowController extends AnchorPane {
 	public void initialize() {
 		initSpinners();
 		initOrder();
+
+		placeOrderButton.setOnAction(placeOrderListener);
 	}
 
 	private void initSpinners() {
@@ -106,7 +117,7 @@ public class OrderNowController extends AnchorPane {
 
 	private void updateOrder() {
 		orderTotal = 0;
-		String orderTextValue = "";
+		orderTextValue = "";
 
 		for (int i = 0; i < order.length; i++) {
 
@@ -155,7 +166,29 @@ public class OrderNowController extends AnchorPane {
 		}
 
 		orderText.setText(orderTextValue);
-		totalText.setText("Total: $" + orderTotal);
+		totalText.setText("Total: $" + String.format("%.2f", orderTotal));
 	}
+	
+	private void resetOrder() {
+		initSpinners();
+		initOrder();
+	}
+
+	EventHandler<ActionEvent> placeOrderListener = new EventHandler<ActionEvent>() {
+		@Override
+		public void handle(ActionEvent event) {
+			String orderReceipt = orderTextValue + "\n------------\nTotal: $" + String.format("%.2f", orderTotal);
+			Alert alert = new Alert(AlertType.NONE, orderReceipt, ButtonType.OK);
+			alert.setTitle("Java Cafe");
+			alert.setHeaderText("Your Order Details");
+			alert.showAndWait();
+			
+			if (alert.getResult() == ButtonType.OK) {
+				resetOrder();
+//				orderTextValue = "fuck";
+//				System.out.println("fuck");
+			}
+		}
+	};
 
 }

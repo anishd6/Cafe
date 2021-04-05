@@ -9,8 +9,7 @@
 
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity"
 	minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0"
-	prefWidth="650.0" type="AnchorPane"
-	xmlns="http://javafx.com/javafx"
+	prefWidth="650.0" type="AnchorPane" xmlns="http://javafx.com/javafx"
 	xmlns:fx="http://javafx.com/fxml">
 	<children>
 		<Text layoutX="183.0" layoutY="60.0" strokeType="OUTSIDE"
