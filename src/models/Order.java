@@ -39,13 +39,13 @@ public class Order {
 
 	}
 
-	public void calculateOrderTotal() {
+	public double calculateOrderTotal() {
 
-		int total = 0;
+		double total = 0;
 
 		for (int i = 0; i < orderQtty.length; i++) {
 
-			if (orderQtty[i] != 0) {
+			if (orderQtty[i] > 0 && orderQtty[i] <= 100) {
 				int itemCount = orderQtty[i];
 
 				switch (i) {
@@ -81,6 +81,8 @@ public class Order {
 			}
 
 		}
+		
+		return total;
 
 	}
 
@@ -89,7 +91,7 @@ public class Order {
 
 		for (int i = 0; i < orderQtty.length; i++) {
 
-			if (orderQtty[i] != 0) {
+			if (orderQtty[i] > 0 && orderQtty[i] < 100) {
 				int itemCount = orderQtty[i];
 				switch (i) {
 				case 0:
