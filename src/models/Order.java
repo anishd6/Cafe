@@ -267,4 +267,8 @@ public class Order {
 		this.orderReceipt = orderReceipt;
 	}
 
+	public int getDailyCalories() {
+		return dailyCalories;
+	}
+
 }
