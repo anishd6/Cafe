@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+	<children>
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@../../../sbImg/light-brown-color-solid-background-1920x1080.png" />
+         </image>
+      </ImageView>
+		<Text layoutX="158.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Coupon" textAlignment="CENTER" wrappingWidth="284.21630859375">
+			<font>
+				<Font size="48.0" />
+			</font>
+		</Text>
+      <Text layoutX="151.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Todays coupon code: 123" textAlignment="CENTER" wrappingWidth="284.21630859375">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="158.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enjoy 50% off your order with our coupon code." textAlignment="CENTER" wrappingWidth="284.21630859375">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="137.0" fitWidth="261.0" layoutX="163.0" layoutY="235.0">
+         <image>
+            <Image url="@../../../sbImg/coffeee.jpg" />
+         </image>
+      </ImageView>
+	</children>
+</fx:root>
