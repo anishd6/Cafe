@@ -43,6 +43,7 @@ public class Order {
 				throw new IllegalArgumentException();
 
 		orderQtty = order;
+		calculateOrderTotal();
 
 	}
 
@@ -243,7 +244,7 @@ public class Order {
 
 	}
 
-	public void addCoupon(String code) {
+	public void addCoupon(String code) throws IllegalArgumentException {
 		if (code == "123")
 			setOrderTotal(getOrderTotal() / 2);
 	}
