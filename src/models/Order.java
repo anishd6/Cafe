@@ -1,5 +1,7 @@
 package models;
 
+import java.text.DecimalFormat;
+
 public class Order {
 
 	public int[] orderQtty;
@@ -25,10 +27,9 @@ public class Order {
 
 	public Order(int americano, int cappuccino, int espresso, int hotChocolate, int whiteChocolate, int matchaLatte,
 			int doughnut, int croissant, int cheesecake) {
-		orderQtty = new int[9];
-		
+
 		int[] order = new int[9];
-		
+
 		order[0] = americano;
 		order[1] = cappuccino;
 		order[2] = espresso;
@@ -38,14 +39,16 @@ public class Order {
 		order[6] = doughnut;
 		order[7] = croissant;
 		order[8] = cheesecake;
-		
+
 		for (int i : order)
 			if (i < 0 || i > 100)
 				throw new IllegalArgumentException();
 
+		orderQtty = order;
+
 	}
 
-	public double calculateOrderTotal() {
+	public void calculateOrderTotal() {
 
 		double total = 0;
 
@@ -85,10 +88,9 @@ public class Order {
 				}
 
 			}
-
 		}
-		
-		return total;
+
+		orderTotal = Math.round(total * 100.0) / 100.0;
 
 	}
 
@@ -243,6 +245,15 @@ public class Order {
 
 	}
 
+	public void addCoupon(String code) {
+		if (code == "123")
+			setOrderTotal(getOrderTotal() / 2);
+	}
+
+	public boolean verifyCoupon(String code) {
+		return code == "123";
+	}
+
 	public int compareNutrition() {
 		if (orderQtty.length < 0 || orderQtty.length > 9)
 			throw new IllegalArgumentException();
@@ -264,7 +275,7 @@ public class Order {
 	}
 
 	public void setOrderTotal(double orderTotal) {
-		this.orderTotal = orderTotal;
+		this.orderTotal = Math.round(orderTotal * 100.0) / 100.0;
 	}
 
 	public String getOrderReceipt() {
