@@ -26,16 +26,22 @@ public class Order {
 	public Order(int americano, int cappuccino, int espresso, int hotChocolate, int whiteChocolate, int matchaLatte,
 			int doughnut, int croissant, int cheesecake) {
 		orderQtty = new int[9];
-
-		orderQtty[0] = americano;
-		orderQtty[1] = cappuccino;
-		orderQtty[2] = espresso;
-		orderQtty[3] = hotChocolate;
-		orderQtty[4] = whiteChocolate;
-		orderQtty[5] = matchaLatte;
-		orderQtty[6] = doughnut;
-		orderQtty[7] = croissant;
-		orderQtty[8] = cheesecake;
+		
+		int[] order = new int[9];
+		
+		order[0] = americano;
+		order[1] = cappuccino;
+		order[2] = espresso;
+		order[3] = hotChocolate;
+		order[4] = whiteChocolate;
+		order[5] = matchaLatte;
+		order[6] = doughnut;
+		order[7] = croissant;
+		order[8] = cheesecake;
+		
+		for (int i : order)
+			if (i < 0 || i > 100)
+				throw new IllegalArgumentException();
 
 	}
 

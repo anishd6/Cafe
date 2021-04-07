@@ -11,31 +11,26 @@ public class OrderBoundaryUnit {
 	@Test
 	public void testValidItems() {
 		Order order = new Order(1, 0, 0, 1, 0, 0, 1, 0, 0);
-		
-		assertEquals(true, validOrder(order));
+
+		assertEquals(true, order.getOrderQtty().length > 0);
 	}
-	
+
 	@Test
 	public void testTooLittleItems() {
-		Order order = new Order(1, 0, 0, -1, 0, 0, 1, 0, 0);
-		
-		assertEquals(false, validOrder(order));
+
+		assertThrows(IllegalArgumentException.class, () -> {
+			new Order(1, 0, 0, -1, 0, 0, 1, 0, 0);
+		});
+
 	}
-	
+
 	@Test
 	public void testTooManyItems() {
-		Order order = new Order(1, 0, 0, 101, 0, 0, 1, 0, 0);
-		
-		assertEquals(false, validOrder(order));
-	}
-	
-	public boolean validOrder(Order order) {
 
-		for (int i : order.getOrderQtty())
-			if (i < 0 || i > 100)
-				return false;
+		assertThrows(IllegalArgumentException.class, () -> {
+			new Order(1, 0, 0, 101, 0, 0, 1, 0, 0);
+		});
 
-		return true;
 	}
 
 }
