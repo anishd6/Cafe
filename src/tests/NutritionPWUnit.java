@@ -60,7 +60,14 @@ public class NutritionPWUnit {
 		Order order = new Order(americano, cappuccino, espresso, hotChocolate, whiteChocolate, matchaLatte, doughnut,
 				croissant, cheesecake);
 		
-		assertEquals(1, order.compareNutrition());
+		int[] nutComparison = order.compareNutrition();
+		boolean overNutrition = false;
+		
+		for (int i : nutComparison)
+			if (i == 1)
+				overNutrition = true;
+		
+		assertEquals(false, overNutrition);
 	}
 
 }

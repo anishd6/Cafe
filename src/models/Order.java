@@ -1,7 +1,5 @@
 package models;
 
-import java.text.DecimalFormat;
-
 public class Order {
 
 	public int[] orderQtty;
@@ -16,7 +14,7 @@ public class Order {
 	public int dailyCalories = 1800;
 	public int dailyProtein = 150;
 	public int dailyCarbohydrates = 210;
-	public int dailyFat = 40;
+	public int dailyFat = 55;
 
 	public Order() {
 		orderQtty = new int[9];
@@ -254,12 +252,20 @@ public class Order {
 		return code == "123";
 	}
 
-	public int compareNutrition() {
+	public int[] compareNutrition() {
+
 		if (orderQtty.length < 0 || orderQtty.length > 9)
 			throw new IllegalArgumentException();
 
-		return orderQtty[0] > dailyCalories || orderQtty[1] > dailyFat || orderQtty[2] > dailyProtein
-				|| orderQtty[3] > dailyCarbohydrates ? 0 : 1;
+		int[] comparison = new int[4];
+		int[] orderNutrition = generateNutrition();
+
+		comparison[0] = orderNutrition[0] < dailyCalories ? 0 : 1;
+		comparison[1] = orderNutrition[1] < dailyFat ? 0 : 1;
+		comparison[2] = orderNutrition[2] < dailyProtein ? 0 : 1;
+		comparison[3] = orderNutrition[3] < dailyCarbohydrates ? 0 : 1;
+
+		return comparison;
 	}
 
 	public int[] getOrderQtty() {

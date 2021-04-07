@@ -29,6 +29,7 @@ public class OrderEquivalenceUnit {
 	public void testOrder3() {
 		Order order = new Order(100, 100, 100, 100, 100, 100, 100, 100, 100);
 		order.calculateOrderTotal();
+		order.addCoupon("1234");
 
 		assertEquals(true, order.getOrderTotal() == 3075);
 	}
