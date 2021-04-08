@@ -25,6 +25,8 @@ public class ShellController extends AnchorPane {
 	@FXML
 	Text logOutBtn;
 
+	public int currentPage;
+
 	@FXML
 	void initialize() {
 
@@ -33,37 +35,65 @@ public class ShellController extends AnchorPane {
 
 	@FXML
 	public void homeBtnListener() {
-		HomeController homeController = new HomeController();
 
-		mainPane.setCenter(homeController);
+		setCurrentPage(0);
+
+		if (mainPane != null) {
+			HomeController homeController = new HomeController();
+			mainPane.setCenter(homeController);
+
+		}
 	}
 
 	@FXML
 	public void menuBtnListener() {
-		MenuController menuController = new MenuController();
 
-		mainPane.setCenter(menuController);
+		setCurrentPage(1);
+
+		if (mainPane != null) {
+			MenuController menuController = new MenuController();
+			mainPane.setCenter(menuController);
+		}
 	}
 
 	@FXML
 	public void nutritionBtnListener() {
-		NutritionController nutritionController = new NutritionController();
 
-		mainPane.setCenter(nutritionController);
+		setCurrentPage(2);
+
+		if (mainPane != null) {
+			NutritionController nutritionController = new NutritionController();
+			mainPane.setCenter(nutritionController);
+		}
 	}
 
 	@FXML
 	public void couponBtnListener() {
 		CouponController couponController = new CouponController();
 
-		mainPane.setCenter(couponController);
+		setCurrentPage(3);
+
+		if (mainPane != null)
+			mainPane.setCenter(couponController);
 	}
 
 	@FXML
 	public void orderNowBtnListener() {
-		OrderNowController orderNowController = new OrderNowController();
 
-		mainPane.setCenter(orderNowController);
+		setCurrentPage(4);
+
+		if (mainPane != null) {
+			OrderNowController orderNowController = new OrderNowController();
+			mainPane.setCenter(orderNowController);
+		}
+	}
+
+	public int getCurrentPage() {
+		return currentPage;
+	}
+
+	public void setCurrentPage(int currentPage) {
+		this.currentPage = currentPage;
 	}
 
 }
