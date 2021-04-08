@@ -3,12 +3,14 @@ package tests;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import models.Order;
 
 public class OrderEquivalenceUnit {
 
 	@Test
+	@Category(BlackBoxTest.class)
 	public void testOrder1() {
 		Order order = new Order(1, 2, 3, 4, 5, 6, 7, 8, 9);
 		order.calculateOrderTotal();
@@ -17,6 +19,7 @@ public class OrderEquivalenceUnit {
 	}
 
 	@Test
+	@Category(BlackBoxTest.class)
 	public void testOrder2() {
 		Order order = new Order(1, 2, 3, 4, 5, 6, 7, 8, 9);
 		order.calculateOrderTotal();
@@ -26,6 +29,7 @@ public class OrderEquivalenceUnit {
 	}
 
 	@Test
+	@Category(BlackBoxTest.class)
 	public void testOrder3() {
 		Order order = new Order(1, 2, 3, 4, 5, 6, 7, 8, 9);
 		order.calculateOrderTotal();

@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import application.ShellController;
 
@@ -12,6 +13,7 @@ public class ShellFSMUnit {
 	ShellController shellController = new ShellController();
 
 	@Test
+	@Category(WhiteBoxTest.class)
 	public void testNavToMenu() {
 		shellController.menuBtnListener();
 
@@ -19,6 +21,7 @@ public class ShellFSMUnit {
 	}
 
 	@Test
+	@Category(WhiteBoxTest.class)
 	public void testNavToNutrition() {
 		shellController.nutritionBtnListener();
 
@@ -26,6 +29,7 @@ public class ShellFSMUnit {
 	}
 
 	@Test
+	@Category(WhiteBoxTest.class)
 	public void testNavToCoupon() {
 		shellController.couponBtnListener();
 
@@ -33,6 +37,7 @@ public class ShellFSMUnit {
 	}
 
 	@Test
+	@Category(WhiteBoxTest.class)
 	public void testNavToOrderNow() {
 		shellController.orderNowBtnListener();
 

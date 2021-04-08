@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
@@ -55,7 +56,7 @@ public class NutritionPWUnit {
 	}
 
 	@Test
-//	@Category(SecondaryTest.class)
+	@Category(BlackBoxTest.class)
 	public void testNutritionBalance() {
 		Order order = new Order(americano, cappuccino, espresso, hotChocolate, whiteChocolate, matchaLatte, doughnut,
 				croissant, cheesecake);
